@@ -1,0 +1,161 @@
+/* סגנון כללי לגוף הדף */
+body {
+    direction: rtl;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* סגנון לתוכן המרכזי */
+#content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* סגנון לכותרת */
+h1 {
+    color: #00796b;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* סגנון למידע על השחקנים */
+#game-info {
+    margin-bottom: 20px;
+}
+
+#game-info p {
+    font-size: 20px;
+    color: #00796b;
+}
+
+/* סגנון לניקוד */
+#score .player-name {
+    font-weight: bold;
+    color: #e27070;
+}
+
+/* סגנון ללוח המשחק */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+    font-family: Segoe Script;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #b2dfdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.square:hover {
+    background-color: #00796b;
+    color: white;
+}
+
+/* סגנון לתא מנצח */
+.square.winning-square {
+    background-color: #00796b !important; /* צבע רקע מודגש */
+    /* color: #000000 !important; צבע טקסט שחור */
+}
+
+/* סגנון למצב המשחק */
+#statusPlayers {
+    font-size: 26px;
+    color: #d32f2f;
+    animation: none; /* הוספת סגנון עבור האנימציה */
+    font-weight: bolder;
+}
+
+#statusPlayers.animated {
+    animation: pulse 1s ease-in-out infinite alternate;
+}
+
+#statusGame {
+    font-weight: bolder;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+/* סגנון לכפתורים */
+#buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 150px; /* קביעת רוחב קבוע לכפתורים */
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* סגנון לטיימר */
+#timer {
+    font-size: 24px;
+    color: #00796b;
+    margin-top: -10px;
+}
+
+#timer.red {
+    color: #d32f2f; /* צבע אדום */
+}
+
+#mouse-image {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    display: none; /* Start hidden */
+}
+
+.svgContainer {
+    width: 40%;  
+    height: 40%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;  */
+    background-color: green;
+}
+
+.svgContainer svg {
+    width: 100%;
+    height: 100%;
+    /* object-fit: contain; */
+}

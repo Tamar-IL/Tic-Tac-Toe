@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק איקס עיגול</title>
+    <script src="../js/gamePage.js"></script>
+    <link href="../css/gamePage.css" rel="stylesheet" />
+</head>
+<body onload="init()">
+    <div id="content" dir="rtl" >
+        <h1>Tic Tac Toe</h1>
+        <div id="game-info">
+            <audio src="../sounds/start.mp3" autoplay></audio>
+            <audio id="winSound" src="../sounds/win.mp3"></audio>
+            <p id="score"></p>
+            <p id="statusPlayers"></p>
+            
+            <p id="timer">10</p>
+        </div>
+        <div id="game-board">
+        </div>
+        <p id="statusGame">1 מתוך 4</p>
+        <div id="buttons">
+            <button onclick="endGame()">לסיים</button>
+        </div>
+    </div>
+    <img id="mouse-image" width="40" height="40">
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תוצאות המשחק</title>
+    <link href="../css/basic.css" rel="stylesheet" />
+    <link href="../css/winnerPage.css" rel="stylesheet">
+    <script src="../js/winnerPage.js"></script>
+</head>
+<body onload="init()">
+    <div id="content">
+        <h1 id="winner"></h1>
+        <p id="score"></p>
+        <div id="buttons">
+            <audio id="clappingSound" src="../sounds/clap.mp3" autoplay></audio>
+            <button id="newGameBtn" onclick="newGame()">משחק חדש</button>
+            <button id="finishBtn" onclick="finishGame()">לסיים</button>
+            <br>
+            <button id="leaderPlyersBtn" onclick="viewLeaderboard()">שחקנים מובילים</button>
+        </div>
+    </div>
+    <canvas id="confetti-canvas"></canvas>
+</body>
+</html>
+

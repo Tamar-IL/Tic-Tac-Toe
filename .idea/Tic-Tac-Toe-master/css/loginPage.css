@@ -1,0 +1,206 @@
+/* סגנון כללי לגוף הדף */
+body {
+    direction: rtl;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* סגנון לתוכן המרכזי */
+#content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* סגנון לכותרות */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 17px;
+    font-size: 15px;
+    color: #00796b;
+}   
+
+.titleGame {
+    font-size: 35px;
+    margin-bottom: 0;
+    color: #015e53;
+}
+
+/* -------------- player info ---------------- */
+.grid-container {
+    height: 80px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+        ". selectArea addArea"
+        ". selectArea addArea";
+    grid-template-rows: auto auto;
+    gap: 1px;
+    padding: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+    /* background-color: rebeccapurple; */
+
+}   
+.item1{
+    /* background-color: antiquewhite; */
+    justify-content: flex-end; 
+}
+.item4{
+    /* background-color: antiquewhite; */
+    justify-content: flex-end;
+}
+
+
+.item2 {
+    grid-area: selectArea;
+}
+.item3 {
+    grid-area: addArea;
+}
+
+.namesSlt {
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    border: 2px solid #00796b;
+}
+.addBtn {
+    width: 35px;
+    height: 35px;
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 0px;
+}
+.namesTxt {
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    border: 2px solid #00796b;
+    padding: 5px;
+    font-size: 14px;
+    color: #00796b;
+    box-sizing: border-box; /* לכלול את הגבול וה-padding בחישוב הרוחב */
+    margin-right: 0px; /* להבטיח שאין מרווחים מיותרים */
+    text-align: center;
+    outline: none; /* הסרת קו מתאר */
+}
+
+.namesTxt:focus {
+    border-color: #004d40; /* צבע גבול כשהקלט ממוקד */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* הצללה קלה בעת פוקוס */
+}
+
+
+
+.svgContainer {
+    width: 60%;  
+    height: 50%; 
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    overflow: hidden;  
+    /* background-color: green; */
+    border: 1px solid #00796b;
+    border-radius: 10px;
+    padding: 2px;    
+}
+.svgContainer svg {
+    width: 100%;
+    height: 100%;  
+}
+
+.cursorColor {
+    height: 8px;
+    width: 70%; /* הרחבת רוחב כדי להכיל את הצבע בצורה טובה */
+    border: none; /* הסרת גבולות */
+    border-radius: 3px;
+    outline: none; /* הסרת קווים חיצוניים */
+    padding: 0;
+    margin-top: -12px;
+    cursor: pointer; /* להוסיף סמן לחיצה */
+    background-color: transparent; /* רקע שקוף */
+    position: relative; /* נדרש למיקום העיצוב */
+}
+
+/* הוספת פס צבע מעל התיבה */
+.cursorColor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor; /* הצגת צבע נבחר */
+    border-radius: 50%; /* עיגול */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* הצגת צבע מאחורי התיבה */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* הוספת הצללה קלה */
+}
+
+/* עיצוב של הצבע הנבחר */
+.cursorColor::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.cursorColor::-webkit-color-swatch {
+    border: none; /* הסרת גבולות */
+}
+
+.cursorColor::-moz-color-swatch {
+    border: none; /* הסרת גבולות */
+}
+
+
+
+/* ---------------------------------- */
+
+/* סגנון לכפתור ההמשך */
+button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* סגנון לכפתור ההמשך על רחיפה */
+button:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+}
+
+.lblImgCursor {
+    margin: 0px 5px 0px 10px; /* מרווח בין התמונות */
+    display: flex; /* הצגת כפתור הרדיו והתמונה בשורה אחת */
+    align-items: center;
+}
+
+.lblImgCursor img {
+    font-size: 17px;
+    width: 55px;
+    height: 30px;
+    border: 1px solid #00796b;
+    border-radius: 8px;
+    padding: 5px;
+}
